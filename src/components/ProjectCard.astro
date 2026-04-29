@@ -1,0 +1,148 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  course?: string;
+  grade?: string;
+  tags?: string[];
+  cover?: string;
+  coverFit?: "cover" | "contain";
+}
+const {
+  href,
+  title,
+  summary,
+  course,
+  grade,
+  tags = [],
+  cover,
+  coverFit = "cover",
+} = Astro.props;
+---
+
+<a class="card" href={href}>
+  {cover && (
+    <div class={`cover ${coverFit === "contain" ? "cover-contain" : ""}`}>
+      <img src={cover} alt="" loading="lazy" />
+    </div>
+  )}
+  <div class="body">
+    <div class="meta">
+      {course && <span>{course}</span>}
+      {grade && (
+        <span class="grade">
+          {grade.toLowerCase().includes("waiting") ? grade : `Grade: ${grade}`}
+        </span>
+      )}
+    </div>
+    <h3 class="title">{title}</h3>
+    <p class="summary">{summary}</p>
+    {tags.length > 0 && (
+      <ul class="tags">
+        {tags.map((t) => <li>{t}</li>)}
+      </ul>
+    )}
+    <span class="more">Read more →</span>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: var(--color-ink);
+    transition: transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med);
+    height: 100%;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: #d0d7e0;
+    color: var(--color-ink);
+  }
+  .cover {
+    aspect-ratio: 16 / 10;
+    background: var(--color-bg);
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .cover.cover-contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  .cover.cover-contain img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .body {
+    padding: 1.5rem 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .meta {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
+    margin-bottom: 0.6rem;
+  }
+  .grade {
+    color: var(--color-navy);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+  }
+  .summary {
+    font-size: 0.92rem;
+    color: var(--color-charcoal);
+    line-height: 1.55;
+    margin: 0 0 1rem;
+  }
+  .tags {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tags li {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    color: var(--color-muted);
+  }
+  .more {
+    margin-top: auto;
+    font-size: 0.85rem;
+    color: var(--color-navy);
+    font-weight: 500;
+  }
+</style>

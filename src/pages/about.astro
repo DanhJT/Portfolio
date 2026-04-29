@@ -1,0 +1,288 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About, Jan Tran">
+  <section class="section">
+    <div class="container about-grid">
+      <div class="col-text">
+        <p class="eyebrow">About</p>
+        <h1>Built for analysis and judgement.</h1>
+        <p class="lede">
+          I am a finance master's student with a weakness for well-built
+          models, clear arguments, and decisions that survive more than one
+          market cycle.
+        </p>
+
+        <p>
+          Fund management, financial analysis, and banking appeal to me because
+          they sit at the intersection of analysis and judgement. Both
+          require more than just building a model and hoping Excel agrees.
+          Financial analysis combines structure with uncertainty: you can
+          build the model, test the assumptions, and still need judgement
+          when the real world refuses to behave like the spreadsheet.
+        </p>
+
+        <p>
+          Outside the spreadsheets, I like training, learning new things,
+          and occasionally convincing myself that running is a good idea.
+        </p>
+
+        <h2 class="h-sub">Education</h2>
+        <ul class="list">
+          <li>
+            <div class="list-main">
+              <strong>MSc in Business, Major in Finance</strong>
+              <span class="muted"> · 2025 – 2027</span>
+            </div>
+            <div class="muted small">
+              BI Norwegian Business School · Profile in Portfolio, Asset and
+              Risk Management · Siviløkonom degree · 120 ECTS · Taught in English
+            </div>
+          </li>
+          <li>
+            <div class="list-main">
+              <strong>BSc in Business and Economics</strong>
+              <span class="muted"> · 2021 – 2025</span>
+            </div>
+            <div class="muted small">
+              BI Norwegian Business School · Electives in Financial Modelling
+              in Practice, Programming with Databases, B2B Marketing, and
+              Personal Finance
+            </div>
+          </li>
+        </ul>
+
+        <h2 class="h-sub">Experience</h2>
+        <ul class="list">
+          <li>
+            <div class="list-main">
+              <strong>Kredinor AS, Customer Advisor</strong>
+              <span class="muted"> · March 2025 – present · Oslo</span>
+            </div>
+            <div class="muted small">
+              Advising customers on debt management at the customer service
+              centre. Cases handled in Norwegian and English under AML
+              compliance, with a focus on tailored repayment solutions.
+            </div>
+          </li>
+          <li>
+            <div class="list-main">
+              <strong>Scanasia AS (Wholesale), Operational Consultant, IT</strong>
+              <span class="muted"> · Aug 2022 – Jun 2024 · Oslo</span>
+            </div>
+            <div class="muted small">
+              Built Excel-based operational models, ran the wholesale import
+              documentation flow under Norwegian Food Safety Authority
+              oversight, and partnered with the CEO on strategic initiatives,
+              including delivery of a new website and internal operational
+              system.
+            </div>
+          </li>
+          <li>
+            <div class="list-main">
+              <strong>SATS AS, On-Call Staff</strong>
+              <span class="muted"> · Feb 2020 – Mar 2023 · Oslo</span>
+            </div>
+            <div class="muted small">
+              Customer-facing retail role with sales targets. Also supported
+              recruitment through candidate screening and interviews.
+            </div>
+          </li>
+        </ul>
+
+        <h2 class="h-sub">Leadership & volunteer</h2>
+        <ul class="list">
+          <li>
+            <div class="list-main">
+              <strong>Norwegian Young Catholics (NUK), Board Member, Charitable Committee</strong>
+              <span class="muted"> · 2019 – 2021</span>
+            </div>
+            <div class="muted small">
+              Local Chapter Coordinator across Norway: campaign rollout and
+              performance analysis at the chapter level.
+            </div>
+          </li>
+          <li>
+            <div class="list-main">
+              <strong>NUK, Camp Leader</strong>
+              <span class="muted"> · Active since 2019</span>
+            </div>
+            <div class="muted small">
+              Culinary lead for week-long camps, covering menu planning,
+              portion control, and cost budgeting. Supervised first-time
+              leaders and acted as group lead and responsible person for
+              participants.
+            </div>
+          </li>
+        </ul>
+
+        <h2 class="h-sub">Skills</h2>
+        <div class="skills">
+          <div>
+            <h3 class="skill-label">Finance & Modeling</h3>
+            <ul class="tag-list">
+              <li>Valuation (DCF, APV)</li>
+              <li>LBO analysis</li>
+              <li>FX hedging</li>
+              <li>Fixed income</li>
+              <li>Portfolio optimization</li>
+              <li>Factor models</li>
+              <li>Scenario analysis</li>
+              <li>Risk management</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="skill-label">Tools</h3>
+            <ul class="tag-list">
+              <li>Excel (advanced)</li>
+              <li>VBA</li>
+              <li>PowerPoint</li>
+              <li>Word</li>
+              <li>Python</li>
+              <li>R</li>
+              <li>SQLite</li>
+              <li>HTML / CSS</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="skill-label">Languages</h3>
+            <ul class="tag-list">
+              <li>Norwegian (native)</li>
+              <li>English (fluent)</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="h-sub">Outside work</h2>
+        <p class="muted">
+          Cooking, climbing, golf, weight lifting, and ongoing volunteer work
+          with NUK.
+        </p>
+      </div>
+
+      <aside class="col-side">
+        <figure class="portrait">
+          <img src="/images/Image-1.jpg" alt="Portrait of Jan Tran" />
+        </figure>
+        <div class="quick">
+          <h3>At a glance</h3>
+          <dl>
+            <dt>Based in</dt><dd>Oslo, Norway</dd>
+            <dt>Graduating</dt><dd>2027</dd>
+            <dt>Seeking</dt><dd>Fund management · Financial analysis · Banking</dd>
+            <dt>Languages</dt><dd>Norwegian, English</dd>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .col-text p, .col-text .lede { max-width: 62ch; }
+  .h-sub {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .list-main strong { color: var(--color-ink); font-weight: 500; }
+  .list .small { margin-top: 0.2rem; line-height: 1.55; }
+  .small { font-size: 0.88rem; }
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin: 0 0 0.55rem;
+    font-weight: 500;
+  }
+  .tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag-list li {
+    font-size: 0.82rem;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    color: var(--color-charcoal);
+    background: var(--color-surface);
+  }
+  .col-side {
+    position: sticky;
+    top: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .portrait {
+    margin: 0 auto;
+    max-width: 330px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
+  }
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .quick {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+  }
+  .quick h3 {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-muted);
+    margin: 0 0 0.85rem;
+    font-weight: 500;
+  }
+  .quick dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 0.55rem;
+    column-gap: 1rem;
+    font-size: 0.9rem;
+  }
+  .quick dt { color: var(--color-muted); }
+  .quick dd { margin: 0; color: var(--color-ink); }
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .col-side { position: static; }
+  }
+</style>

@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(echo \"started PID $!\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/)",
+      "Bash(python3 -c \"import sys, re; t=sys.stdin.read\\(\\); t=re.sub\\(r'</w:p>', '\\\\n\\\\n', t\\); t=re.sub\\(r'<[^>]+>', '', t\\); print\\(t\\)\")",
+      "Bash(unzip -p \"/Users/jantran/Desktop/Projects/Medi Media/Use this version.docx\" word/document.xml)",
+      "Bash(set -e)",
+      "Bash(rm -f placeholder-1.svg placeholder-2.svg placeholder-3.svg)",
+      "Bash(mkdir -p fx-hedging fx-carry-trade fixed-income-treasury medimedia-lbo portfolio-factor-model)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/FX hedging/fx_exposure_scenario_analysis.png\" fx-hedging/exposure-scenario-analysis.png)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/FX hedging/fx_ocf_sensitivity_chart.png\" fx-hedging/ocf-sensitivity.png)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/Medi Media/Image 26-04-2026 at 18.48.png\" /Users/jantran/Desktop/PortfolioWS/public/projects/medimedia-lbo/lbo-summary.png)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/Medi Media/Cover.png\" /Users/jantran/Desktop/PortfolioWS/public/projects/medimedia-lbo/cover.png)",
+      "WebFetch(domain:www.bi.no)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/Medi Media/Image 28-04-2026 at 12.07.png\" senior-debt-cashflows.png)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/Medi Media/Image 28-04-2026 at 12.07 \\(1\\).png\" mezzanine-cashflow.png)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/Medi Media/Image 28-04-2026 at 12.05.png\" put-option-valuation.png)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/Medi Media/Image 28-04-2026 at 12.06.png\" exit-ev-ebit.png)",
+      "Bash(cp \"/Users/jantran/Desktop/Projects/Medi Media/Image 28-04-2026 at 12.06 \\(1\\).png\" exit-ev-ebitda.png)",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL ok'\\)\")",
+      "Bash(python3 -c 'from PIL import Image; w,h=Image.open\\('\\\\''__TRACKED_VAR__'\\\\''\\).size; print\\('\\\\''__TRACKED_VAR__:'\\\\'', w, '\\\\''x'\\\\'', h, '\\\\''aspect'\\\\'', round\\(w/h,2\\)\\)')",
+      "Bash(python3)"
+    ]
+  }
+}
