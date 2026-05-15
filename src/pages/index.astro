@@ -31,27 +31,6 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
         <a href="/projects" class="btn btn-primary">View projects</a>
         <a href="/about" class="btn">About me</a>
       </div>
-      <div class="stats">
-        <div class="stat">
-          <span class="stat-val">5</span>
-          <span class="stat-key">Projects</span>
-        </div>
-        <span class="stat-sep" aria-hidden="true"></span>
-        <div class="stat">
-          <span class="stat-val">A / B</span>
-          <span class="stat-key">Grades earned</span>
-        </div>
-        <span class="stat-sep" aria-hidden="true"></span>
-        <div class="stat">
-          <span class="stat-val">2027</span>
-          <span class="stat-key">Graduate</span>
-        </div>
-        <span class="stat-sep" aria-hidden="true"></span>
-        <div class="stat">
-          <span class="stat-val">Oslo</span>
-          <span class="stat-key">Based</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -116,7 +95,7 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
     left: -300px;
     width: 900px;
     height: 900px;
-    background: radial-gradient(circle, rgba(13, 148, 136, 0.07) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(30, 58, 95, 0.07) 0%, transparent 65%);
     pointer-events: none;
     z-index: 0;
   }
@@ -190,44 +169,6 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
     gap: 0.75rem;
     flex-wrap: wrap;
     animation: fadeUp 0.55s 0.5s ease both;
-  }
-
-  /* ── Stats strip ── */
-  .stats {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2.75rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-line);
-    animation: fadeUp 0.55s 0.6s ease both;
-    flex-wrap: wrap;
-  }
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-  .stat-val {
-    font-family: var(--font-serif);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--color-ink);
-    letter-spacing: -0.02em;
-    line-height: 1;
-  }
-  .stat-key {
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.13em;
-    color: var(--color-muted);
-    font-weight: 500;
-  }
-  .stat-sep {
-    width: 1px;
-    height: 2rem;
-    background: var(--color-line);
-    flex-shrink: 0;
   }
 
   /* ── Scroll reveal ── */
