@@ -77,6 +77,10 @@ const {
     object-fit: cover;
     object-position: top center;
     display: block;
+    transition: transform 0.5s ease;
+  }
+  .card:hover .cover img {
+    transform: scale(1.05);
   }
   .cover.cover-contain {
     display: flex;

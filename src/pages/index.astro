@@ -11,9 +11,14 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
 
 <Layout>
   <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <p class="eyebrow">Portfolio</p>
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        <span>Portfolio</span>
+      </div>
       <h1>Jan Tran</h1>
+      <div class="hero-line"></div>
       <p class="role">MSc in Business, Major in Finance</p>
       <p class="lede pitch">
         Master's student in Finance at BI Norwegian Business School, with a profile in Portfolio, Asset and Risk Management. I am drawn to work that combines analytical depth with practical impact, where finance, technology, and good judgement improve how decisions are made and how value is created.
@@ -31,26 +36,30 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
 
   <hr class="divider" />
 
-  <section class="section approach">
-    <div class="container approach-inner">
-      <div class="approach-head">
-        <p class="eyebrow">Coding & AI</p>
-        <h2>Smarter workflows,<br />better finance.</h2>
-      </div>
-      <div class="approach-body">
-        <p>
-          I have always been drawn to efficiency and technology. That is where my interest in AI and coding comes from. I believe that when AI is used well, it can help finance move faster, work smarter, and create more value by improving how information is processed, tested, and applied.
-        </p>
-        <p>
-          My master's thesis explores machine learning in finance, giving me the chance to work directly with this intersection. Outside my studies, I am learning coding out of curiosity and a genuine interest in the technology shaping the next generation of financial work.
-        </p>
+  <section class="section approach" data-animate>
+    <div class="container">
+      <div class="approach-card">
+        <div class="approach-inner">
+          <div class="approach-head">
+            <p class="eyebrow">Coding & AI</p>
+            <h2>Smarter workflows,<br />better finance.</h2>
+          </div>
+          <div class="approach-body">
+            <p>
+              I have always been drawn to efficiency and technology. That is where my interest in AI and coding comes from. I believe that when AI is used well, it can help finance move faster, work smarter, and create more value by improving how information is processed, tested, and applied.
+            </p>
+            <p>
+              My master's thesis explores machine learning in finance, giving me the chance to work directly with this intersection. Outside my studies, I am learning coding out of curiosity and a genuine interest in the technology shaping the next generation of financial work.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <hr class="divider" />
 
-  <section class="section">
+  <section class="section" data-animate>
     <div class="container">
       <div class="section-head">
         <div>
@@ -78,22 +87,71 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
 </Layout>
 
 <style>
+  /* ── Hero ── */
   .hero {
-    padding: 7rem 0 5rem;
+    padding: 8rem 0 5.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -320px;
+    left: -320px;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(201, 163, 85, 0.08) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
   }
   .hero-inner {
     max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 1.75rem;
+    animation: fadeUp 0.55s ease both;
+  }
+  .tag-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-navy);
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  .hero-tag span:last-child {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    font-weight: 500;
+  }
+  .hero-inner h1 {
+    animation: fadeUp 0.55s 0.1s ease both;
+    margin-bottom: 0;
+  }
+  .hero-line {
+    width: 52px;
+    height: 2px;
+    background: var(--color-navy);
+    margin: 1.5rem 0 1.75rem;
+    animation: fadeUp 0.55s 0.18s ease both;
   }
   .role {
     font-family: var(--font-sans);
     font-size: 1.05rem;
     color: var(--color-navy);
-    margin: -0.2rem 0 1.5rem;
+    margin: 0 0 1.25rem;
     font-weight: 500;
     letter-spacing: 0.02em;
+    animation: fadeUp 0.55s 0.25s ease both;
   }
   .pitch {
     max-width: 640px;
+    animation: fadeUp 0.55s 0.33s ease both;
   }
   .currently {
     margin: 1.25rem 0 0;
@@ -101,6 +159,7 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
     color: var(--color-muted);
     font-style: italic;
     max-width: 640px;
+    animation: fadeUp 0.55s 0.41s ease both;
   }
   .currently-label {
     color: var(--color-charcoal);
@@ -109,34 +168,49 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
     letter-spacing: 0.02em;
   }
   .cta {
-    margin-top: 2rem;
+    margin-top: 2.25rem;
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
+    animation: fadeUp 0.55s 0.5s ease both;
   }
-  .section-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 2.5rem;
-    gap: 1rem;
-    flex-wrap: wrap;
+
+  /* ── Scroll reveal ── */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
   }
-  .see-all {
-    font-size: 0.9rem;
-    color: var(--color-navy);
-    font-weight: 500;
+  [data-animate].is-visible {
+    opacity: 1;
+    transform: none;
   }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+
+  /* ── Approach card ── */
+  .approach-card {
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    padding: 3rem 3.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    overflow: hidden;
+  }
+  .approach-card::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201, 163, 85, 0.05) 0%, transparent 70%);
+    pointer-events: none;
   }
   .approach-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
     gap: 4rem;
     align-items: start;
+    position: relative;
   }
   .approach-head h2 {
     font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -151,10 +225,59 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
   }
   .approach-body p + p { margin-top: 1.25em; }
 
+  /* ── Featured projects ── */
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .see-all {
+    font-size: 0.9rem;
+    color: var(--color-navy);
+    font-weight: 500;
+    transition: opacity 0.15s ease;
+  }
+  .see-all:hover { opacity: 0.75; color: var(--color-navy); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── Keyframes ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.45; transform: scale(0.85); }
+  }
+
+  /* ── Responsive ── */
   @media (max-width: 800px) {
     .approach-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    .approach-card  { padding: 2rem 1.75rem; }
   }
   @media (max-width: 640px) {
-    .hero { padding: 3.5rem 0 2.5rem; }
+    .hero { padding: 4.5rem 0 3rem; }
   }
 </style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+  );
+  document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
+</script>
