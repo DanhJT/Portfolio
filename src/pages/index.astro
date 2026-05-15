@@ -31,28 +31,45 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
         <a href="/projects" class="btn btn-primary">View projects</a>
         <a href="/about" class="btn">About me</a>
       </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-val">5</span>
+          <span class="stat-key">Projects</span>
+        </div>
+        <span class="stat-sep" aria-hidden="true"></span>
+        <div class="stat">
+          <span class="stat-val">A / B</span>
+          <span class="stat-key">Grades earned</span>
+        </div>
+        <span class="stat-sep" aria-hidden="true"></span>
+        <div class="stat">
+          <span class="stat-val">2027</span>
+          <span class="stat-key">Graduate</span>
+        </div>
+        <span class="stat-sep" aria-hidden="true"></span>
+        <div class="stat">
+          <span class="stat-val">Oslo</span>
+          <span class="stat-key">Based</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <hr class="divider" />
 
   <section class="section approach" data-animate>
-    <div class="container">
-      <div class="approach-card">
-        <div class="approach-inner">
-          <div class="approach-head">
-            <p class="eyebrow">Coding & AI</p>
-            <h2>Smarter workflows,<br />better finance.</h2>
-          </div>
-          <div class="approach-body">
-            <p>
-              I have always been drawn to efficiency and technology. That is where my interest in AI and coding comes from. I believe that when AI is used well, it can help finance move faster, work smarter, and create more value by improving how information is processed, tested, and applied.
-            </p>
-            <p>
-              My master's thesis explores machine learning in finance, giving me the chance to work directly with this intersection. Outside my studies, I am learning coding out of curiosity and a genuine interest in the technology shaping the next generation of financial work.
-            </p>
-          </div>
-        </div>
+    <div class="container approach-inner">
+      <div class="approach-head">
+        <p class="eyebrow">Coding & AI</p>
+        <h2>Smarter workflows,<br />better finance.</h2>
+      </div>
+      <div class="approach-body">
+        <p class="approach-lead">
+          I have always been drawn to efficiency and technology. That is where my interest in AI and coding comes from. I believe that when AI is used well, it can help finance move faster, work smarter, and create more value by improving how information is processed, tested, and applied.
+        </p>
+        <p>
+          My master's thesis explores machine learning in finance, giving me the chance to work directly with this intersection. Outside my studies, I am learning coding out of curiosity and a genuine interest in the technology shaping the next generation of financial work.
+        </p>
       </div>
     </div>
   </section>
@@ -95,11 +112,11 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
   }
   .hero-glow {
     position: absolute;
-    top: -320px;
-    left: -320px;
-    width: 1000px;
-    height: 1000px;
-    background: radial-gradient(circle, rgba(22, 101, 52, 0.06) 0%, transparent 65%);
+    top: -300px;
+    left: -300px;
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.07) 0%, transparent 65%);
     pointer-events: none;
     z-index: 0;
   }
@@ -175,6 +192,44 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
     animation: fadeUp 0.55s 0.5s ease both;
   }
 
+  /* ── Stats strip ── */
+  .stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.75rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-line);
+    animation: fadeUp 0.55s 0.6s ease both;
+    flex-wrap: wrap;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .stat-val {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat-key {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    color: var(--color-muted);
+    font-weight: 500;
+  }
+  .stat-sep {
+    width: 1px;
+    height: 2rem;
+    background: var(--color-line);
+    flex-shrink: 0;
+  }
+
   /* ── Scroll reveal ── */
   [data-animate] {
     opacity: 0;
@@ -186,36 +241,26 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
     transform: none;
   }
 
-  /* ── Approach card ── */
-  .approach-card {
-    border: 1px solid var(--color-line);
-    border-radius: 12px;
-    padding: 3rem 3.5rem;
-    background: rgba(255, 255, 255, 0.02);
-    position: relative;
-    overflow: hidden;
-  }
-  .approach-card::before {
-    content: "";
-    position: absolute;
-    top: -120px;
-    right: -120px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(22, 101, 52, 0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
+  /* ── Approach ── */
   .approach-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-    gap: 4rem;
+    gap: 5rem;
     align-items: start;
-    position: relative;
   }
   .approach-head h2 {
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     line-height: 1.2;
     margin: 0;
+  }
+  .approach-body .approach-lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-ink);
+    font-style: italic;
+    border-left: 3px solid var(--color-navy);
+    padding-left: 1.25rem;
+    margin: 0 0 1.25rem;
   }
   .approach-body p {
     font-size: 1rem;
@@ -233,6 +278,8 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
     margin-bottom: 2.5rem;
     gap: 1rem;
     flex-wrap: wrap;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-line);
   }
   .see-all {
     font-size: 0.9rem;
@@ -240,7 +287,7 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
     font-weight: 500;
     transition: opacity 0.15s ease;
   }
-  .see-all:hover { opacity: 0.75; color: var(--color-navy); }
+  .see-all:hover { opacity: 0.7; color: var(--color-navy); }
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -254,16 +301,17 @@ const featured = projects.filter((p) => p.data.featured).slice(0, 3);
   }
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.45; transform: scale(0.85); }
+    50%       { opacity: 0.4; transform: scale(0.8); }
   }
 
   /* ── Responsive ── */
   @media (max-width: 800px) {
-    .approach-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-    .approach-card  { padding: 2rem 1.75rem; }
+    .approach-inner { grid-template-columns: 1fr; gap: 2rem; }
   }
   @media (max-width: 640px) {
     .hero { padding: 4.5rem 0 3rem; }
+    .stats { gap: 1.25rem; }
+    .stat-sep { display: none; }
   }
 </style>
 
